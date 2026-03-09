@@ -3,7 +3,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Perde & Ev Tekstili Yönetimi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -17,8 +17,27 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            touch-action: pan-x pan-y; /* Parmakla yakınlaştırmayı CSS seviyesinde de kısıtlar */
+            /* Yakınlaştırma ve Kaydırma Kontrolü */
+            touch-action: pan-x pan-y;
+            /* Metin Seçme ve Kopyalama Engeli */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            /* Mobil cihazlarda basılı tutunca çıkan gri kutuyu engeller */
+            -webkit-tap-highlight-color: transparent;
+            /* iOS Safari için ek kontroller */
+            -webkit-touch-callout: none;
         }
+
+        /* Form elemanlarında (input, textarea) yazma yapılabilmesi için istisna */
+        input, textarea {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -40,9 +59,9 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-CIpZYDva.js"></script>
+  <script type="module" crossorigin src="/assets/index-DgZbgTqL.js"></script>
 </head>
-<body class="bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
-    <div id="root"></div>
+<body class="bg-gray-50 dark:bg-slate-900 transition-colors duration-300" oncontextmenu="return false;">
+    <div id="root"></div>
 </body>
 </html>
